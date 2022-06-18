@@ -7,6 +7,13 @@
 # version should be 0.4.2.
 # Here is a link to discussion of the problem with getting data from yahoo.
 # https://github.com/joshuaulrich/quantmod/issues/358
+
+library(tidyverse)
+library(tidyquant)
+library(lubridate)
+library(dplyr)
+
+
 #####Problem 1#####
 # Write the following functions:
 # 1.1. A function which replicates the SMA function. It should calculate the SMA
@@ -45,27 +52,30 @@ CorFunction(vector2, vector1)
 
 #####Problem 1#####
 
+data <- c(0, 2, 4, 6, 7, 3, 2, 9, 17, 14, 15, 0, 4, 3)
+for (i in 1:length(data)){
+  d <- c(d, mean(data[i:(i+3)]))}
+d <- ifelse(is.na(d), NA, sss)
+# 1.2 cor
+m <- c(41, 19, 23, 40, 55, 57, 33)
+n <- c(94, 60, 74, 71, 82, 76, 61)
+k <- (mean(sum(m-mean(m))*sum(n-mean(n))))/(sd(m)*sd(n))
+l <- cor(m, n)
+
 #####Problem 2#####
 # Find all prime numbers less than 100, using for/while loops.
 
-#####Problem 2#####
-n=100
-x = seq(1, n)
-
-prime_numbers -> c()
-composite_numbers -> c()
-for (i in seq(2, n)) {
+x = (1:100)
+prime_numbers=c()
+for (i in 2:100) {
   if (any(x == i)) {
     prime_numbers = c(prime_numbers, i)
     x = c(x[(x %% i) != 0], i)
   }
-  else{
-    composite_numbers = c(composite_numbers, i)
-  }
 }
-
 print(prime_numbers)
 
+# One of the many I looked for in the Internet. I got the logic behind it.
 #####Problem 2#####
 
 #####Problem 3#####
